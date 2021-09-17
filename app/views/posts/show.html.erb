@@ -1,0 +1,15 @@
+<div class="posts-wrapper row">
+  <div class="post">
+    <div class="post-head">
+    </div>
+    <div class="image center-block">
+      <%= image_tag @post.image %>
+    </div>
+    <p class="description">
+      <%= @post.description %>
+    </p>
+    <div class="text-center">
+      <%= link_to "Cancel", posts_path %>
+    </div>
+  </div>
+</div>
