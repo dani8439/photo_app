@@ -1,5 +1,7 @@
 <div class="text-center">
-  <%= image_tag @post.image%>
+    <div class="image center-block">
+        <%= image_tag @post.image, class:'img-responsive'%>
+    </div>
     </div>
         <%= render 'form'  %>
     </div>
