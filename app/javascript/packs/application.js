@@ -16,3 +16,6 @@ require("channels");
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+// import("../scss/application.scss"); // <-- This here is the m new like
+// console.log("I am here");
