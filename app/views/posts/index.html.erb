@@ -1,6 +1,16 @@
-<h1>Photo App</h1>
 
-<% @posts.each do |post| %> 
-    <p> <%= image_tag(post.image, size: "640") %></p>
-    <p><%= post.description %></p>
-<% end %> 
+
+<div class="posts-wrapper row">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="post-head">
+      </div>
+      <div class="image center-block">
+        <%= link_to (image_tag post.image, class:'img-responsive'), post_path(post) %>
+      </div>
+      <p class="description">
+        <%= post.description %>
+      </p>
+    </div>
+  <% end %>
+</div> 
