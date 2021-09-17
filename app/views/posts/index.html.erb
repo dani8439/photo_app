@@ -1,6 +1,6 @@
 <h1>Photo App</h1>
 
 <% @posts.each do |post| %> 
-    <p> <%= image_tag(post.image, size: "640x640") %></p>
+    <p> <%= image_tag(post.image, size: "640") %></p>
     <p><%= post.description %></p>
 <% end %> 
