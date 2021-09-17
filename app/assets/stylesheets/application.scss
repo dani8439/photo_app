@@ -56,15 +56,24 @@ body {
 }
 
 .post-head {
+  flex-direction: row;
   height: 64px;
-  padding: 14px 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
   color: #125688;
   font-size: 15px;
   line-height: 18px;
-  .thumbnail {
+  .user-name,
+  .time-ago {
+    display: inline;
   }
-  .name {
-    display: block;
+  .user-name {
+    font-weight: 500;
+  }
+  .time-ago {
+    color: #a5a7aa;
+    float: right;
   }
 }
 

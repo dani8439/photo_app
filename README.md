@@ -24,3 +24,5 @@ Things you may want to cover:
 - ...
 
 <%= javascript_pack_tag 'application.js', 'data-turbolinks-track': 'reload' %>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
