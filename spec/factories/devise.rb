@@ -3,6 +3,6 @@ FactoryBot.define do
         email { "me@mail.com" }
         user_name { "SomeGuy" }
         password { "123ABC" }
-        id { 1 }
+        id { 4 }
     end 
 end 
