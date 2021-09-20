@@ -19,14 +19,14 @@ feature 'User authentication' do
         expect(page).to have_content('Logout')
     end 
 
-    # scenario 'can log out once logged in' do 
-    #     visit '/'
-    #     click_link 'Login'
-    #     fill_in 'Email', with: 'me@mail.com'
-    #     fill_in 'Password', with: '123ABC'
-    #     click_button 'Log in'
+    scenario 'can log out once logged in' do 
+        visit '/'
+        click_link 'Login'
+        fill_in 'Email', with: 'me@mail.com'
+        fill_in 'Password', with: '123ABC'
+        click_button 'Log in'
 
-    #     click_link 'Logout'
-    #     expect(page).to have_content('Signed out successfully.')
-    # end
+        click_link 'Logout'
+        expect(page).to have_content('Log in')
+    end
 end 
