@@ -1,28 +1,26 @@
-# require 'rails_helper.rb'
+require 'rails_helper'
 
-# feature 'Creating posts' do 
-#     background do 
-#         create :user,  email: "me@mail.com", user_name: "SomeGuy", password: "123ABC", id: 4
-#         new_user_session_path 'me@mail.com', "123ABC"
-#     end 
+feature 'Creating posts' do
+  background do
+    user = create :user
+    sign_in_with user
+  end
 
-#     scenario 'signs the user in successfully with a valid email and password' do 
-#         new_user_session_path 'me@mail.com', "123ABC"
-#     end 
+  scenario 'can create a new post' do
+    visit '/'
+    click_link 'New Post'
+    attach_file('Image', "spec/files/images/puppy.jpg")
+    fill_in 'Description', with: "puppy"
+    click_button 'Create Post'
+    expect(page).to have_content("puppy")
+    expect(page).to have_css("img[src*='puppy']")
+  end
 
-#     def sign_in_with(email, password)
-#         visit new_user_session_path 
-#         fill_in 'Email', with: email 
-#         fill_in 'Password', with: password 
-#         click_button 'Sign In'
-#     end 
-
-#     scenario 'can create a new post' do 
-#         visit '/'
-#         # sign in is failing, cannot see new post link
-#         click_link 'New Post'
-#         attach_file('Image', "spec/files/images/puppy.jpg")
-#         fill_in 'Description', with: "Puppy"
-#         click_button 'Create Post'
-#     end 
-# end 
+  scenario 'a post needs an image to save' do
+    visit '/'
+    click_link 'New Post'
+    fill_in 'Description', with: "No picture because YOLO"
+    click_button 'Create Post'
+    expect(page).to have_content("Your new post couldn't be created. Please check that all information has been filled out.")
+  end
+end
