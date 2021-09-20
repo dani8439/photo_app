@@ -1,8 +1,7 @@
 class Post < ApplicationRecord
     belongs_to :user
+    # belongs_to :user, optional: true // need according to stack exchange and new docs for rspec?
     validates :user_id, presence: true 
     validates :image, presence: true 
     has_one_attached :image
-    # has_attached_file :image, styles: { :medium => "640px" }
-    # validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 end
